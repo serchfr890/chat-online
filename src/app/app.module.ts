@@ -11,6 +11,7 @@ import {AngularFireModule} from '@angular/fire';
 import {AngularFireAuthModule} from '@angular/fire/auth';
 import {AngularFirestoreModule} from '@angular/fire/firestore';
 import {ChatComponent} from './components/chat/chat.component';
+import {FormsModule} from '@angular/forms';
 @NgModule({
     declarations: [AppComponent, ChatComponent],
     entryComponents: [ChatComponent],
@@ -19,7 +20,7 @@ import {ChatComponent} from './components/chat/chat.component';
         AppRoutingModule,
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireAuthModule,
-        AngularFirestoreModule],
+        AngularFirestoreModule, FormsModule],
     providers: [
         StatusBar,
         SplashScreen,
