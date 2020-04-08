@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import {ModalController, NavParams} from '@ionic/angular';
 import {Messages} from '../../models/messages';
 import {ChatsService} from '../../services/chats.service';
+import {UtilsService} from '../../services/utils.service';
 
 @Component({
   selector: 'app-chat',
@@ -16,7 +17,8 @@ export class ChatComponent implements OnInit {
   room: any;
   constructor(private navParams: NavParams,
               private modalController: ModalController,
-              private chatsService: ChatsService) { }
+              private chatsService: ChatsService) {
+  }
 
   ngOnInit() {
     this.chat = this.navParams.get('chat');

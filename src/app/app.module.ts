@@ -16,7 +16,7 @@ import {FormsModule} from '@angular/forms';
     declarations: [AppComponent, ChatComponent],
     entryComponents: [ChatComponent],
     imports: [BrowserModule,
-        IonicModule.forRoot(),
+        IonicModule.forRoot({_forceStatusbarPadding: true}),
         AppRoutingModule,
         AngularFireModule.initializeApp(firebaseConfig),
         AngularFireAuthModule,

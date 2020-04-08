@@ -9,7 +9,7 @@ import {ChatComponent} from '../components/chat/chat.component';
   templateUrl: 'home.page.html',
   styleUrls: ['home.page.scss'],
 })
-export class HomePage implements OnInit{
+export class HomePage implements OnInit {
 
   chatsRooms: Chat[] = [];
   constructor(private authService: AuthService,

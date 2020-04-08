@@ -1,5 +1,7 @@
 {
   "name": "chatonline",
-  "integrations": {},
+  "integrations": {
+    "capacitor": {}
+  },
   "type": "angular"
 }
