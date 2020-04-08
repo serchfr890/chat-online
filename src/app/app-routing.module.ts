@@ -6,7 +6,10 @@ import {NologinGuard} from './guards/nologin.guard';
 const routes: Routes = [
   { path: '', redirectTo: 'home', pathMatch: 'full' },
   { path: 'home', loadChildren: () => import('./home/home.module').then( m => m.HomePageModule), canActivate : [AuthGuard]},
-  { path: 'login',  loadChildren: () => import('./components/login/login.module').then( m => m.LoginPageModule), canActivate: [NologinGuard]}
+  // tslint:disable-next-line:max-line-length
+  { path: 'login',  loadChildren: () => import('./components/login/login.module').then( m => m.LoginPageModule), canActivate: [NologinGuard]},
+  // tslint:disable-next-line:max-line-length
+  { path: 'register', loadChildren: () => import('./components/register/register.module').then( m => m.RegisterPageModule), canActivate: [NologinGuard]}
 ];
 
 @NgModule({
