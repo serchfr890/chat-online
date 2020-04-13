@@ -46,7 +46,14 @@ export class HomePage implements OnInit {
         handler: () => {
           this.onLogout();
         }
-      }]
+      },
+        {
+          text: 'DarkMode',
+          icon: 'moon',
+          handler: () => {
+            document.body.classList.toggle('dark');
+          }
+        }]
     });
     await actionSheet.present();
   }
