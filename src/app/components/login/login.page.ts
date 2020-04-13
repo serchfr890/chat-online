@@ -23,8 +23,15 @@ export class LoginPage implements OnInit {
     }
 
     onSubmitLogin() {
+        this.utilsService.setPresentLoading(true);
         this.authService.login(this.email, this.password).then(res => {
-            this.router.navigate(['/home']).then(() => this.utilsService.presentToast(TOAST_MESSAGES.SUCCESS_LOGIN));
-        }).catch(() => this.utilsService.presentToast(TOAST_MESSAGES.ERROR_LOGIN));
+            this.router.navigate(['/home']).then(() => {
+                this.utilsService.presentToast(TOAST_MESSAGES.SUCCESS_LOGIN);
+                this.utilsService.setPresentLoading(false);
+            });
+        }).catch(() => {
+            this.utilsService.presentToast(TOAST_MESSAGES.ERROR_LOGIN);
+            this.utilsService.setPresentLoading(false);
+        });
     }
 }

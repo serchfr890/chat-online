@@ -20,7 +20,10 @@ export class AuthService {
   }
 
   logout() {
-      this.angularFireAuth.signOut().then(r => this.router.navigate(['/login']));
+      return new Promise((resolve, reject) => {
+          this.angularFireAuth.signOut().then(() => { resolve('OK');
+          }).catch(error => reject(error));
+      });
   }
 
   register(name: string, email: string, password: string) {
